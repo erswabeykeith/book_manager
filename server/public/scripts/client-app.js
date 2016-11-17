@@ -111,6 +111,7 @@ function appendBooks(books) {
   for (var i = 0; i < books.length; i++) {
     $("#book-list").append('<div class="row book"></div>');
     $el = $('#book-list').children().last();
+<<<<<<< HEAD
     var book = books[i];
     $el.data('id', book.id);
     console.log("Date from DB: ", book.published);
@@ -138,5 +139,13 @@ function appendBooks(books) {
 
     $el.append('<button class="update">Update</button>');
     $el.append('<button class="delete">Delete</button>');
+=======
+    $el.append('<h2> ' + books[i].title + '</h2>');
+    $el.append('<p> ' + books[i].author + '</p>');
+    $el.append('<p> ' + books[i].genre + '</p>');
+    $el.append('<p> ' + books[i].published + '</p>');
+    $el.append('<p> ' + books[i].edition + '</p>');
+    $el.append('<p> ' + books[i].publisher + '</p>');
+>>>>>>> 579697e77af89232b51c86a80e20fffbcd8c4ecc
   }
 }
