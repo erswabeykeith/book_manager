@@ -7,22 +7,23 @@ $(document).ready(function () {
     $("#book-list").on('click', '.delete', deleteBook);
     // update a book
     $("#book-list").on('click', '.update', updateBook);
-    //get genere
-    $(".genre-form").on('click', '#genre-submit', selectGenre);
+    //get genre
+    $(".genre-form").on('click', '#genre-submit', getBooks);
 });
 function selectGenre() {
-  event.preventDefault();
-  var genere = $('#genre :selected').val();
+  // var genre = $('#genre-list').val();
   //alert(genre);
-  console.log(genere);
+
 }
 /**
  * Retrieve books from server and append to DOM
  */
 function getBooks() {
+  var genre = $('#genre-list').val();
+  console.log(genre);
   $.ajax({
     type: 'GET',
-    url: '/books',
+    url: '/books/'+ genre,
     success: function(books) {
       appendBooks(books);
     },
